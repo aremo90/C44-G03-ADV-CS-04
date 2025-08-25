@@ -179,7 +179,7 @@
             #region function retrun funcion
 
             //DelegateToAction();
-            DelegateToAction()();
+            //DelegateToAction()();
 
             #endregion
 
@@ -187,10 +187,10 @@
 
         #region function retrun funcion
 
-        public static Action DelegateToAction()
-        {
-          return delegate() { Console.WriteLine("Hello from nested function"); };
-        }
+        //public static Action DelegateToAction()
+        //{
+        //  return delegate() { Console.WriteLine("Hello from nested function"); };
+        //}
 
         #endregion
     }
