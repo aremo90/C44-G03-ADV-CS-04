@@ -156,6 +156,20 @@
 
             #endregion
 
+            #region Annonymous Method
+
+            Predicate<int> pred = delegate (int number) { return number > 0; };
+            Console.WriteLine(pred.Invoke(20));
+
+            Func<int, string> func = delegate (int number) { return number.ToString(); };
+            Console.WriteLine(func.Invoke(100));
+
+            Action<string> act = delegate (string value) { Console.WriteLine(value); };
+            act.Invoke("Hello World");
+
+
+            #endregion
+
         }
     }
 }
