@@ -173,9 +173,25 @@
             // C#3.0 Feature
             // => Called 'fat Arrow' and Read as 'Goes to'
 
-            Predicate<int> pred = number => number > 0;;
+            //Predicate<int> pred = number => number > 0;
+            #endregion
+
+            #region function retrun funcion
+
+            //DelegateToAction();
+            DelegateToAction()();
+
             #endregion
 
         }
+
+        #region function retrun funcion
+
+        public static Action DelegateToAction()
+        {
+          return delegate() { Console.WriteLine("Hello from nested function"); };
+        }
+
+        #endregion
     }
 }
