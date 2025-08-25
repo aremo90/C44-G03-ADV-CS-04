@@ -7,19 +7,17 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
 
-
-
-    internal class Helper
+    internal class Helper <T>
     {
-        private static void Swap(ref int a, ref int b)
+        private static void Swap(ref T a, ref T b)
         {
-            int temp = a;
+            T temp = a;
             a = b;
             b = temp;
         }
 
         // Sort Asscending
-        public static void BuubleSort(int[] arr , CompareDel CompareTypeDel)
+        public static void BuubleSort(T[] arr , CompareDel<T , bool> CompareTypeDel)
         {
             
             if (arr is not null )

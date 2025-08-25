@@ -50,16 +50,29 @@
 
             // Bubble Sort Alogorithm
 
-            int [] arr = { 5, 3, 8, 6, 2 };
+            //int [] arr = { 5, 3, 8, 6, 2 };
 
-            Helper.BuubleSort(arr, SortingTypes.CompareLess);
+            //Helper.BuubleSort(arr, SortingTypes.CompareLess);
 
-            foreach (var item in arr)
-            {
-                Console.Write(item + " ");
-            }
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
 
             // Passing function as parameter
+
+            #endregion
+
+            #region Example 3 Generic
+
+            // sort of string based on length
+
+            string[] names = { "John", "Alice", "Bob", "Eve", "Charlie" };
+
+            Helper<string>.BuubleSort(names, SortingTypes.CompareStringLess);
+
+            foreach (var item in names)
+                Console.WriteLine(item);
 
             #endregion
 
