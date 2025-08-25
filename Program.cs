@@ -16,17 +16,17 @@
         //    return Result;
         //}
 
-        public static List<int> FindNumbers(List<int> numbers , ConditionDelegate condition)
-        {
-            List<int> Result = new List<int>();
-            if (numbers is not null)
-            {
-                foreach (var number in numbers)
-                    if (condition.Invoke(number))
-                        Result.Add(number);
-            }
-            return Result;
-        }
+        //public static List<int> FindNumbers(List<int> numbers , ConditionDelegate condition)
+        //{
+        //    List<int> Result = new List<int>();
+        //    if (numbers is not null)
+        //    {
+        //        foreach (var number in numbers)
+        //            if (condition.Invoke(number))
+        //                Result.Add(number);
+        //    }
+        //    return Result;
+        //}
 
         #endregion
 
@@ -91,7 +91,7 @@
 
             #endregion
 
-            #region Example 3 Generic
+            #region Example 2 Generic
 
             // sort of string based on length
 
@@ -107,15 +107,52 @@
             #region Example 3
 
             // function input List Number => Odd Number || Even Number
-            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-            ConditionDelegate OddFunction = CheckNumber.IsOdd;
-            ConditionDelegate EvenFunction = CheckNumber.IsEven;
+            //ConditionDelegate OddFunction = CheckNumber.IsOdd;
+            //ConditionDelegate EvenFunction = CheckNumber.IsEven;
 
-            List<int> OddNumbers = FindNumbers(numbers, OddFunction);
+            //List<int> OddNumbers = FindNumbers(numbers, OddFunction);
 
-            foreach (var item in OddNumbers)
-                Console.WriteLine(item);
+            //foreach (var item in OddNumbers)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+
+            #region Built in Delegates
+
+            // Predicate :-
+            //Predicate<int> pred;
+            // This Reference can store reference of method which return bool and take int as input parameter
+            //pred = CommonFunctions.TestNumber;
+
+
+            //Console.WriteLine(pred.Invoke(-20));
+
+
+            // FanC :-
+
+            //Func<int, string> func;
+            //func = CommonFunctions.Cast;
+            //string result = func.Invoke(100);
+            //Console.WriteLine(result);
+
+
+            // Non-Generic Action :-
+
+            //Action act = CommonFunctions.Print;
+            //act();
+
+
+            // Generic Action :-
+
+            //Action<int> act = CommonFunctions.Print;
+            //act.Invoke(100);
+            //Action<string> act2 = CommonFunctions.Print;
+            //act2.Invoke("Hello World");
+
+
 
             #endregion
 
