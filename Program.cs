@@ -2,6 +2,34 @@
 {
     internal class Program
     {
+        #region Delegate Example 3
+
+        //public static List<int> FindOddNumbers(List<int> numbers)
+        //{
+        //    List<int> Result = new List<int>();
+        //    if (numbers is not null)
+        //    {        
+        //        foreach (var number in numbers)
+        //        if (number % 2 == 1)
+        //            Result.Add(number);
+        //    }
+        //    return Result;
+        //}
+
+        public static List<int> FindNumbers(List<int> numbers , ConditionDelegate condition)
+        {
+            List<int> Result = new List<int>();
+            if (numbers is not null)
+            {
+                foreach (var number in numbers)
+                    if (condition.Invoke(number))
+                        Result.Add(number);
+            }
+            return Result;
+        }
+
+        #endregion
+
         static void Main(string[] args)
         {
             #region Delegate
@@ -67,15 +95,29 @@
 
             // sort of string based on length
 
-            string[] names = { "John", "Alice", "Bob", "Eve", "Charlie" };
+            //string[] names = { "John", "Alice", "Bob", "Eve", "Charlie" };
 
-            Helper<string>.BuubleSort(names, SortingTypes.CompareStringLess);
+            //Helper<string>.BuubleSort(names, SortingTypes.CompareStringLess);
 
-            foreach (var item in names)
-                Console.WriteLine(item);
+            //foreach (var item in names)
+            //    Console.WriteLine(item);
 
             #endregion
 
+            #region Example 3
+
+            // function input List Number => Odd Number || Even Number
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            ConditionDelegate OddFunction = CheckNumber.IsOdd;
+            ConditionDelegate EvenFunction = CheckNumber.IsEven;
+
+            List<int> OddNumbers = FindNumbers(numbers, OddFunction);
+
+            foreach (var item in OddNumbers)
+                Console.WriteLine(item);
+
+            #endregion
 
         }
     }
