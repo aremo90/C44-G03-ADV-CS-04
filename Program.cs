@@ -25,10 +25,10 @@
             #region Example 1
 
             // Step 1 : Declare reference from delegate
-            StringFuncDelegate stringCase;
+            //StringFuncDelegate stringCase;
 
             // Step 2
-            stringCase = new StringFuncDelegate(StringFunc.CountOfUpperCase);
+            //stringCase = new StringFuncDelegate(StringFunc.CountOfUpperCase);
             // stringUpperCase = StringFunc.CountOfUpperCase; => This is also valid
 
             // Add new method
@@ -40,9 +40,26 @@
 
             //Console.WriteLine(stringCase("Hello")); => Output : 1 Upper Case
 
-            int result = stringCase.Invoke("Hello WorlD"); // Output : 3 Upper Case
-            Console.WriteLine(result);
+            //int result = stringCase.Invoke("Hello WorlD"); // Output : 3 Upper Case
+            //Console.WriteLine(result);
             // Note : Invoke always return the result of the last method
+
+            #endregion
+
+            #region Example 2
+
+            // Bubble Sort Alogorithm
+
+            int [] arr = { 5, 3, 8, 6, 2 };
+
+            Helper.BuubleSort(arr, SortingTypes.CompareLess);
+
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+
+            // Passing function as parameter
 
             #endregion
 
